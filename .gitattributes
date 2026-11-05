@@ -1,0 +1,9 @@
+* text=auto eol=lf
+
+# Fichiers binaires : à ne jamais modifier
+*.png binary
+*.jpg binary
+*.ttf binary
+*.dll binary
+*.so binary
+*.zip binary
