@@ -1,0 +1,26 @@
+# ---- Godot 4 ----
+# Cache régénéré automatiquement à l'ouverture du projet
+.godot/
+*.tmp
+# Contient les réglages d'export propres à chaque PC
+export_presets.cfg
+# Builds éventuels
+/HMI/build/
+/HMI/export/
+
+# ---- Arduino ----
+build/
+*.bin
+*.elf
+*.hex
+*.map
+
+# ---- Éditeurs ----
+.vscode/
+.idea/
+*.swp
+
+# ---- Systèmes ----
+Thumbs.db
+desktop.ini
+.DS_Store
