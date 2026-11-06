@@ -89,32 +89,32 @@ offset_right = 320.0
 offset_bottom = 320.0
 theme_override_constants/separation = 10
 
-[node name="TemperatureLabel" type="Label" parent="Values" unique_id=1590201761]
+[node name="Temperature" type="Label" parent="Values" unique_id=1590201761]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_fonts/font = ExtResource("7_i0g15")
 theme_override_font_sizes/font_size = 18
 text = "Température : --"
 
-[node name="HumidityLabel" type="Label" parent="Values" unique_id=388210547]
+[node name="Humidité" type="Label" parent="Values" unique_id=388210547]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_fonts/font = ExtResource("7_i0g15")
 theme_override_font_sizes/font_size = 18
 text = "Humidité : --"
 
-[node name="VoltageLabel" type="Label" parent="Values" unique_id=1729048355]
+[node name="Tension" type="Label" parent="Values" unique_id=1729048355]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_fonts/font = ExtResource("7_i0g15")
 theme_override_font_sizes/font_size = 18
 text = "Tension : --"
 
-[node name="LedPowerRow" type="HBoxContainer" parent="Values" unique_id=902731846]
+[node name="LedAllumage" type="HBoxContainer" parent="Values" unique_id=902731846]
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="LedPowerLabel" type="Label" parent="Values/LedPowerRow" unique_id=1418339071]
+[node name="Led" type="Label" parent="Values/LedAllumage" unique_id=1418339071]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -122,30 +122,30 @@ theme_override_fonts/font = ExtResource("7_i0g15")
 theme_override_font_sizes/font_size = 18
 text = "LED : --"
 
-[node name="LedToggleButton" type="Button" parent="Values/LedPowerRow" unique_id=663457120]
+[node name="LedButton" type="Button" parent="Values/LedAllumage" unique_id=663457120]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(110, 0)
 layout_mode = 2
 text = "Allumer"
 
-[node name="LedColorRow" type="HBoxContainer" parent="Values" unique_id=1872310944]
+[node name="LedCouleur" type="HBoxContainer" parent="Values" unique_id=1872310944]
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="LedColorLabel" type="Label" parent="Values/LedColorRow" unique_id=254180331]
+[node name="Couleur" type="Label" parent="Values/LedCouleur" unique_id=254180331]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("7_i0g15")
 theme_override_font_sizes/font_size = 18
 text = "Couleur :"
 
-[node name="LedColorSwatch" type="ColorRect" parent="Values/LedColorRow" unique_id=1309587760]
+[node name="LedColorSwatch" type="ColorRect" parent="Values/LedCouleur" unique_id=1309587760]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(40, 24)
 layout_mode = 2
 size_flags_vertical = 4
 color = Color(0.14, 0.14, 0.14, 1)
 
-[node name="RandomColorButton" type="Button" parent="Values/LedColorRow" unique_id=1559307826]
+[node name="CouleurAléatoireButton" type="Button" parent="Values/LedCouleur" unique_id=1559307826]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3

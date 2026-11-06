@@ -62,8 +62,8 @@ var _connected: bool = false:
 ## Abonne la tuile (via super), relie les boutons à l'envoi des commandes et part de l'état déconnecté.
 func _ready() -> void:
 	super()
-	%LedToggleButton.pressed.connect(_on_led_toggle_button_pressed)
-	%RandomColorButton.pressed.connect(_on_random_color_button_pressed)
+	%LedButton.pressed.connect(_on_led_toggle_button_pressed)
+	%CouleurAléatoireButton.pressed.connect(_on_random_color_button_pressed)
 	_on_sensor_disconnected()
 
 
@@ -120,22 +120,22 @@ func on_message(subject_name: String, source_id: int, payload: PackedByteArray) 
 func _on_status_climate(payload: PackedByteArray) -> void:
 	if payload.size() != CLIMATE_PAYLOAD_SIZE: return
 	var temperature_degrees := payload.decode_s16(TEMPERATURE_OFFSET) / CENTIDEGREES_PER_DEGREE
-	%TemperatureLabel.text = "Température : %.1f °C" % temperature_degrees
-	%HumidityLabel.text = "Humidité : %d %%" % payload.decode_u8(HUMIDITY_OFFSET)
+	%Temperature.text = "Température : %.1f °C" % temperature_degrees
+	%Humidité.text = "Humidité : %d %%" % payload.decode_u8(HUMIDITY_OFFSET)
 
 
 ## Affiche la tension lue sur la broche analogique, en millivolts.
 func _on_status_voltage(payload: PackedByteArray) -> void:
 	if payload.size() != VOLTAGE_PAYLOAD_SIZE: return
-	%VoltageLabel.text = "Tension : %d mV" % payload.decode_u16(VOLTAGE_OFFSET)
+	%Tension.text = "Tension : %d mV" % payload.decode_u16(VOLTAGE_OFFSET)
 
 
 ## Affiche l'état réel de la LED et adapte le libellé du bouton à l'action qu'il déclenchera.
 func _on_status_led_power(payload: PackedByteArray) -> void:
 	if payload.size() != LED_POWER_PAYLOAD_SIZE: return
 	var is_on := payload.decode_u8(LED_POWER_OFFSET) == LED_ON
-	%LedPowerLabel.text = "LED : allumée" if is_on else "LED : éteinte"
-	%LedToggleButton.text = "Éteindre" if is_on else "Allumer"
+	%LedAllumage.text = "LED : allumée" if is_on else "LED : éteinte"
+	%LedButton.text = "Éteindre" if is_on else "Allumer"
 
 
 ## Affiche la couleur réellement appliquée par le capteur.
@@ -181,8 +181,8 @@ func _on_sensor_disconnected() -> void:
 ## Grise ou non les valeurs affichées, et active ou non les boutons de commande.
 func _set_values_fresh(is_fresh: bool) -> void:
 	%Values.modulate = FRESH_MODULATE if is_fresh else STALE_MODULATE
-	%LedToggleButton.disabled = not is_fresh
-	%RandomColorButton.disabled = not is_fresh
+	%LedButton.disabled = not is_fresh
+	%CouleurAléatoireButton.disabled = not is_fresh
 
 
 ## Traite un heartbeat : (re)connecte le capteur et relance la temporisation.
