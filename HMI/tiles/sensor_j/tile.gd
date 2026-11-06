@@ -134,7 +134,7 @@ func _on_status_voltage(payload: PackedByteArray) -> void:
 func _on_status_led_power(payload: PackedByteArray) -> void:
 	if payload.size() != LED_POWER_PAYLOAD_SIZE: return
 	var is_on := payload.decode_u8(LED_POWER_OFFSET) == LED_ON
-	%LedAllumage.text = "LED : allumée" if is_on else "LED : éteinte"
+	%Led.text = "LED : allumée" if is_on else "LED : éteinte"
 	%LedButton.text = "Éteindre" if is_on else "Allumer"
 
 
