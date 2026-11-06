@@ -2,25 +2,15 @@
 # Cache régénéré automatiquement à l'ouverture du projet
 .godot/
 *.tmp
-# Contient les réglages d'export propres à chaque PC
-export_presets.cfg
-# Builds éventuels
-/HMI/build/
-/HMI/export/
+# Programme déjà compilé fourni par le prof (inutile dans le dépôt)
+HMI/build/
 
 # ---- Arduino ----
 build/
-*.bin
-*.elf
-*.hex
-*.map
 
-# ---- Éditeurs ----
+# ---- Éditeurs / systèmes ----
 .vscode/
 .idea/
-*.swp
-
-# ---- Systèmes ----
 Thumbs.db
 desktop.ini
 .DS_Store
