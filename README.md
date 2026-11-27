@@ -3,7 +3,7 @@
 ## Groupe
 
 - Yanis Gougaud
-- Elio Maamari
+- Elyo Maamari
 - Sacha Mahé
 
 Nom de l'appareil (`DEVICE_NAME`) : `sensor_j`
